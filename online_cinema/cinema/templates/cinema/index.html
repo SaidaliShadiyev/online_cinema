@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Online Cinema
+{% endblock %}
+{% block content %}
+<h2 style="text-align: center; margin-bottom: 30px; font-family: Noto Sans, sans-serif;">New Films</h2>
+<div class="container">
+      {% for item in film|slice:"0:8" %}
+      <div class="card">
+            <img src="{{ item.img }}" alt="">
+            <div class="card-body">
+                  <h4 class="cardtitle">{{ item.title }}</h4>
+                  <p class="card-text">{{ item.desc|slice:"0:70" }}...</p>
+                  <a href="{% url 'film_detail' item.slug %}" class="card-button">Watch Now</a>
+            </div>
+      </div>
+      {% endfor %}
+</div>
+<div class="more">
+      <a href="{% url 'all_films' %}">Watch more..</a>
+</div>
+{% endblock %}

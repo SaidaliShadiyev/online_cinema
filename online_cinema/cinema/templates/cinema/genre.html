@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Category of Films
+{% endblock %}
+{% block content %}
+<h2 style="text-align: center; margin-bottom: 20px;">Genre Of Films</h2>
+<div class="genre-container">
+      {% for query in genre %}
+      <div class="genre">
+            <h3>{{ query.title }}</h3>
+      </div>
+      {% endfor %}
+</div>
+{% endblock %}

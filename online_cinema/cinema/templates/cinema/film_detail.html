@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{{ films_detail.title }}
+{% endblock %}
+{% block content %}
+<div class="content">
+      <div class="content-image">
+            <img src="{{ films_detail.img }}" alt="">
+      </div>
+      <div class="content-text">
+            <h3>{{ films_detail.title }}</h3>
+            <p>{{ films_detail.desc }}</p>
+            <span>Premier: {{ films_detail.year }}</span>
+            <h5>Genre: {{ films_detail.genre }}</h5>
+            <div class="watch">
+                  <a href="">Watch</a>
+            </div>
+      </div>
+</div>
+{% endblock %}

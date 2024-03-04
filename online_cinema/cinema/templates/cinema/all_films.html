@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+All Films
+{% endblock %}
+{% block content %}
+<h2 style="text-align: center; margin-bottom: 30px; font-family: Noto Sans, sans-serif;">All Films</h2>
+<div class="container">
+      {% for film in films %}
+      <div class="card">
+            <img src="{{ film.img }}" alt="">
+            <div class="card-body">
+                  <h4 class="cardtitle">{{ film.title }}</h4>
+                  <p class="card-text">{{ film.desc|slice:"0:70" }}...</p>
+                  <a href="{% url 'film_detail' film.slug %}" class="card-button">Watch Now</a>
+            </div>
+      </div>
+      {% endfor %}
+</div>
+
+{% endblock %}
